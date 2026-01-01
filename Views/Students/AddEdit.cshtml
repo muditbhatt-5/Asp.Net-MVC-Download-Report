@@ -1,0 +1,31 @@
+﻿@model StudentsModel
+
+<form asp-action="Save" method="post">
+
+    <input type="hidden" asp-for="StudentID" />
+
+    <div class="form-group">
+        <label asp-for="StudentName"></label>
+        <input asp-for="StudentName" class="form-control" />
+        <span asp-validation-for="StudentName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="StudentAge"></label>
+        <input asp-for="StudentAge" class="form-control" />
+        <span asp-validation-for="StudentAge" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="StudentMob"></label>
+        <input asp-for="StudentMob" class="form-control" />
+        <span asp-validation-for="StudentMob" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="AdminID"></label>
+        <select asp-for="AdminID"
+                asp-items="@(new SelectList(Model.Adminlist, "AdminID", "AdminName"))" class="form-check">
+            <option value="">Select Admin</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+

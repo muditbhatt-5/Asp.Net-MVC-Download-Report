@@ -1,0 +1,41 @@
+﻿@using System.Data
+@model DataTable
+
+@{
+    ViewData["Title"] = "Admin List";
+}
+
+<h2>Admin List</h2>
+
+<a asp-action="Add" class="btn btn-success mb-3">➕ Add Admin</a>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Admin ID</th>
+            <th>Admin Name</th>
+            <th>Admin Mobile</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Rows.Count > 0)
+        {
+            foreach (DataRow row in Model.Rows)
+            {
+                <tr>
+                    <td>@row["AdminID"]</td>
+                    <td>@row["AdminName"]</td>
+                    <td>@row["AdminMob"]</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="3" class="text-center text-danger">
+                    No Records Found
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

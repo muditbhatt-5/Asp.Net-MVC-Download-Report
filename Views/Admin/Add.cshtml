@@ -1,0 +1,22 @@
+﻿@model Version_Mark_3.Models.AdminModel
+
+@{
+    ViewData["Title"] = "Add Admin";
+}
+
+<h2>Add Admin</h2>
+
+<form asp-action="Save" method="post">
+    <div class="mb-3">
+        <label class="form-label">Admin Name</label>
+        <input asp-for="AdminName" class="form-control" placeholder="Enter admin name" required />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Admin Mobile</label>
+        <input asp-for="AdminMob" class="form-control" placeholder="Enter mobile number" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">💾 Save</button>
+    <a asp-action="Index" class="btn btn-secondary">⬅ Back</a>
+</form>
